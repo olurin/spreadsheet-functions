@@ -1,3 +1,3 @@
-# ExcelFunctions
+# SpreadSheet Functions
 
-Golang implementation of most Spreadsheet formula functions
+Golang implementation of most Spreadsheet formula/functions
