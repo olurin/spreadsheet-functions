@@ -4,8 +4,8 @@ import (
 	"log"
 	"math"
 
-	"github.com/muyiwaolurin/spreadsheet-functions/lib"
-	"github.com/muyiwaolurin/validator"
+	"github.com/TaperBox/spreadsheet-functions/lib"
+	"gopkg.in/go-playground/validator.v8"
 )
 
 // Basic Description
@@ -25,8 +25,8 @@ import (
 // Nominal_rate    Required. The nominal interest rate.
 // Npery    Required. The number of compounding periods per year.
 type EffectStruct struct {
-	Npery      float64 `validate:"required"`
-	NormalRate float64 `validate:"gte=0"`
+	Npery       float64 `validate:"required"`
+	NominalRate float64 `validate:"gte=0"`
 }
 
 // Remarks
@@ -39,8 +39,8 @@ func validateEffect(npery, nominalrate float64) (*EffectStruct, error) {
 	validate := validator.New(&validator.Config{TagName: "validate"})
 
 	effect := &EffectStruct{
-		Npery:      npery,
-		NormalRate: nominalrate,
+		Npery:       npery,
+		NominalRate: nominalrate,
 	}
 
 	errs := validate.Struct(effect)
@@ -54,8 +54,7 @@ func validateEffect(npery, nominalrate float64) (*EffectStruct, error) {
 
 func (e *EffectStruct) effect() float64 {
 	npery := mathlib.Round(e.Npery, 0)
-	log.Println(npery)
-	return math.Pow((1+(e.NormalRate/100)/npery), npery) - 1
+	return math.Pow((1+(e.NominalRate/100)/npery), npery) - 1
 }
 
 // Effect Function The Effective Annual Interest Rate is a measure of
