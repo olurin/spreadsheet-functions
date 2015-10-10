@@ -12,7 +12,7 @@ func TestSign(t *testing.T) {
 		t.Errorf("Sign Function Failed ... ")
 	}
 
-	if Sign(0) != 0 {
+	if Sign(1) != 1 {
 		t.Errorf("Sign Function Failed ... ")
 	}
 
