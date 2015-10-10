@@ -11,5 +11,14 @@ The tables below list all the current built-in Microsoft Excel math functions, g
 | [x] ABS					| Returns the absolute value (ie. the modulus) of a supplied number  |
 | [x] SIGN					| Returns the sign (+1, -1 or 0) of a supplied number			     |
 | [x] GCD					| Returns the Greatest Common Divisor of two or more supplied numbers|
-| [x]q LCM					| Returns the Least Common Multiple of two or more supplied numbers  |
+| [x] LCM					| Returns the Least Common Multiple of two or more supplied numbers  |
     
+
+#### Exponents & Logarithms
+
+| Functions 				|               											         |
+|---------------------------|:------------------------------------------------------------------:|
+| [x] EXP					| Returns e raised to a given power  |
+| [ ] LN					| Returns the natural logarithm of a given number			     |
+| [ ] LOG					| Returns the logarithm of a given number, to a specified base |
+| [ ] LOG10					| Returns the base 10 logarithm of a given number  |

@@ -7,13 +7,13 @@ Golang implementation of most Spreadsheet formula/functions
 #### Functions (Todo)
 
 ##### Math and Trigonometric Functions List 	  
-- [x] Basic Numeric Information				  
+- [x] Basic Numeric Information
+- [ ] Exponents & Logarithms				  
 - [ ] Basic Mathematical Operations			  
 - [ ] Rounding Functions	                  
 - [ ] Trigonometry Functions				  
 - [ ] Advanced Mathematical Operations		  
-- [ ] Matrix Functions						  
-- [ ] Exponents & Logarithms                  
+- [ ] Matrix Functions						                    
 - [ ] Factorials							  
 - [ ] Miscellaneous     					  
 - [ ] Conditional Sums 						  
