@@ -1,35 +1,23 @@
 package spreadsheet
 
-import (
-	"errors"
-	"log"
+import "testing"
 
-	"gopkg.in/go-playground/validator.v8"
-)
+func TestLCM(t *testing.T) {
 
-// LCMstruct struct
-type LCMstruct struct {
-	Numbers []int `validate:"required"`
-}
-
-func validateLCM(nums []int) (*LCMstruct, error) {
-	validate := validator.New(&validator.Config{TagName: "validate"})
-
-	if len(nums) <= 0 {
-		return nil, errors.New("Number1, number2, ...    Number1 is required, subsequent numbers are optional. 1 to 255 values. If any value is not an integer, it is truncated.")
+	if LCM(1, 5) != 5 {
+		t.Errorf("LCM Function Failed ")
 	}
 
-	lcm := &LCMstruct{}
-
-	for _, number := range nums {
-		lcm.Numbers = append(lcm.Numbers, number)
+	if LCM(15, 10, 25) != 150 {
+		t.Errorf("LCM Function Failed ")
 	}
 
-	errs := validate.Struct(lcm)
-	if errs != nil {
-		log.Println(errs)
-		return nil, errs
+	if LCM(1, 8, 12) != 24 {
+		t.Errorf("LCM Function Failed ")
 	}
 
-	return lcm, nil
+	if LCM(7, 2) != 14 {
+		t.Errorf("LCM Function Failed ")
+	}
+
 }

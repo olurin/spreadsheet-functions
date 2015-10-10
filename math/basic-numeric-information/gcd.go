@@ -75,12 +75,14 @@ func GCD(numbers ...int) int {
 	}
 
 	var gcdValue int
+	var index = 0
 
 	l := len(value.Numbers) - 1
 	for l >= 0 {
-		if gcdValue == 0 {
+		if index == 0 {
 			gcdValue = gcd(value.Numbers[l-1], value.Numbers[l])
 			l = l - 1
+			index = index + 1
 			continue
 		}
 		gcdValue = gcd(value.Numbers[l], gcdValue)
