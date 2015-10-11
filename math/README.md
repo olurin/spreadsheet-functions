@@ -15,6 +15,6 @@ The tables below list all the current built-in Microsoft Excel math functions, g
 #### Exponents & Logarithms
 
 - [x] EXP					Returns e raised to a given power 
-- [ ] LN					Returns the natural logarithm of a given number			   
+- [x] LN					Returns the natural logarithm of a given number			   
 - [ ] LOG					Returns the logarithm of a given number, to a specified base 
 - [ ] LOG10					Returns the base 10 logarithm of a given number  
