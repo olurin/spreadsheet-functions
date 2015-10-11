@@ -8,7 +8,7 @@ Golang implementation of most Spreadsheet formula/functions
 
 ##### Math and Trigonometric Functions List 	  
 - [x] Basic Numeric Information
-- [ ] Exponents & Logarithms				  
+- [x] Exponents & Logarithms				  
 - [ ] Basic Mathematical Operations			  
 - [ ] Rounding Functions	                  
 - [ ] Trigonometry Functions				  

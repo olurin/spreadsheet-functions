@@ -18,3 +18,15 @@ The tables below list all the current built-in Microsoft Excel math functions, g
 - [x] LN					Returns the natural logarithm of a given number			   
 - [ ] LOG					Returns the logarithm of a given number, to a specified base 
 - [x] LOG10					Returns the base 10 logarithm of a given number  
+
+
+#### Basic Mathematical Operations
+
+- [ ] SUM	Returns the sum of a supplied list of numbers
+- [ ] PRODUCT	Returns the product of a supplied list of numbers
+- [ ] POWER	Returns the result of a given number raised to a supplied power
+- [ ] SQRT	Returns the positive square root of a given number
+- [ ] QUOTIENT	Returns the integer portion of a division between two supplied numbers
+- [ ] MOD	Returns the remainder from a division between two supplied numbers
+- [ ] AGGREGATE	Performs a specified calculation (eg. the sum, product, average, etc.) for a list or database, with the option to ignore hidden rows and error values
+- [ ] SUBTOTAL	Performs a specified calculation (eg. the sum, product, average, etc.) for a supplied set of values
