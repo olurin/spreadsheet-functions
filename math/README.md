@@ -22,8 +22,8 @@ The tables below list all the current built-in Microsoft Excel math functions, g
 
 #### Basic Mathematical Operations
 
-- [ ] SUM	Returns the sum of a supplied list of numbers
-- [ ] PRODUCT	Returns the product of a supplied list of numbers
+- [x] SUM	Returns the sum of a supplied list of numbers
+- [x] PRODUCT	Returns the product of a supplied list of numbers
 - [ ] POWER	Returns the result of a given number raised to a supplied power
 - [ ] SQRT	Returns the positive square root of a given number
 - [ ] QUOTIENT	Returns the integer portion of a division between two supplied numbers
