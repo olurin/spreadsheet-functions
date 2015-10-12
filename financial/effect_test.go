@@ -10,14 +10,18 @@ func TestEffect(t *testing.T) {
 	nominalrate := 5.25
 	npery := 4.0
 
-	if Effect(npery, nominalrate) != 0.05354266737075841 {
+	v, err := Effect(npery, nominalrate)
+
+	if v != 0.05354266737075841 && err != nil {
 		t.Errorf("Effect Function Failed ... ")
 	}
 
 	nominalrate = 8.5
 	npery = 12.0
 
-	if Effect(npery, nominalrate) != 0.08839090589263554 {
+	v, err = Effect(npery, nominalrate)
+
+	if v != 0.08839090589263554 && err != nil {
 		t.Errorf("Effect Function Failed ... ")
 	}
 }

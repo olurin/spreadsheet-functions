@@ -2,9 +2,9 @@ package spreadsheet
 
 import (
 	"log"
-	"math"
 
 	"github.com/TaperBox/spreadsheet-functions/lib"
+	"github.com/TaperBox/spreadsheet-functions/math/basic-mathematical-operations"
 	"gopkg.in/go-playground/validator.v8"
 )
 
@@ -52,18 +52,20 @@ func validateEffect(npery, nominalrate float64) (*EffectStruct, error) {
 	return effect, nil
 }
 
-func (e *EffectStruct) effect() float64 {
+func (e *EffectStruct) effect() (float64, error) {
 	npery := mathlib.Round(e.Npery, 0)
-	return math.Pow((1+(e.NominalRate/100)/npery), npery) - 1
+	p, err := spreadsheet.Power((1 + (e.NominalRate/100)/npery), npery)
+	return p - 1, err
 }
 
 // Effect Function The Effective Annual Interest Rate is a measure of
 // interest, that incorporates the compounding of interest and is frequently
 // used to compare financial loans with different compounding terms.
-func Effect(npery, nominalrate float64) float64 {
+func Effect(npery, nominalrate float64) (float64, error) {
 	value, err := validateEffect(npery, nominalrate)
 	if err != nil {
-		return 0.0
+		return 0.0, err
 	}
-	return value.effect()
+	e, _ := value.effect()
+	return e, nil
 }
