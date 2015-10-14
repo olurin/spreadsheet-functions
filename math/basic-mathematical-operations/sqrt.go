@@ -19,7 +19,6 @@ func validateSqrt(number float64) (*SqrtStruct, error) {
 	}
 	errs := validate.Struct(sq)
 	if errs != nil {
-		log.Println(errs)
 		return nil, errs
 	}
 	return sq, nil
@@ -29,7 +28,7 @@ func validateSqrt(number float64) (*SqrtStruct, error) {
 func Sqrt(number float64) float64 {
 	v, err := validateSqrt(number)
 	if err != nil {
-		panic(err)
+		log.Println(err)
 	}
 	return math.Sqrt(v.Number)
 }
