@@ -26,7 +26,7 @@ The tables below list all the current built-in Microsoft Excel math functions, g
 - [x] PRODUCT	Returns the product of a supplied list of numbers
 - [x] POWER	Returns the result of a given number raised to a supplied power
 - [x] SQRT	Returns the positive square root of a given number
-- [ ] QUOTIENT	Returns the integer portion of a division between two supplied numbers
-- [ ] MOD	Returns the remainder from a division between two supplied numbers
+- [x] QUOTIENT	Returns the integer portion of a division between two supplied numbers
+- [x] MOD	Returns the remainder from a division between two supplied numbers
 - [ ] AGGREGATE	Performs a specified calculation (eg. the sum, product, average, etc.) for a list or database, with the option to ignore hidden rows and error values
 - [ ] SUBTOTAL	Performs a specified calculation (eg. the sum, product, average, etc.) for a supplied set of values

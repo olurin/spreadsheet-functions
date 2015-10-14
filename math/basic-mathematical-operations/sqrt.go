@@ -29,6 +29,7 @@ func Sqrt(number float64) float64 {
 	v, err := validateSqrt(number)
 	if err != nil {
 		log.Println(err)
+		return 0.0
 	}
 	return math.Sqrt(v.Number)
 }

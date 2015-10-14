@@ -32,6 +32,7 @@ func Quotient(numerator, denominator float64) int {
 	v, err := validateQuotient(numerator, denominator)
 	if err != nil {
 		log.Println(err)
+		return 0
 	}
 
 	return int(v.Numerator / v.Denominator)
