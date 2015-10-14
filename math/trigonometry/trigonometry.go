@@ -31,13 +31,33 @@ func PI() float64 {
 	return 3.14159265358979
 }
 
-// SQRTPI Returns the square root of a supplied number multiplied by pi
+// SqrtPI Returns the square root of a supplied number multiplied by pi
 // Returns the square root of (number * pi).
-func SQRTPI(number float64) float64 {
+func SqrtPI(number float64) float64 {
 	v, err := validateTrigonometry(number)
 	if err != nil {
 		log.Println(err)
 		return 0.0
 	}
 	return spreadsheet.Sqrt(v.Number * PI())
+}
+
+// Degree Converts radians into degrees.
+func Degree(radians float64) float64 {
+	v, err := validateTrigonometry(radians)
+	if err != nil {
+		log.Println(err)
+		return 0.0
+	}
+	return v.Number * (180 / PI())
+}
+
+// Radians Converts Degrees to Radians
+func Radians(degree float64) float64 {
+	v, err := validateTrigonometry(degree)
+	if err != nil {
+		log.Println(err)
+		return 0.0
+	}
+	return v.Number * (PI() / 180)
 }
