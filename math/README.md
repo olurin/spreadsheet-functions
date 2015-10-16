@@ -30,3 +30,31 @@ The tables below list all the current built-in Microsoft Excel math functions, g
 - [x] MOD	Returns the remainder from a division between two supplied numbers
 - [ ] AGGREGATE	Performs a specified calculation (eg. the sum, product, average, etc.) for a list or database, with the option to ignore hidden rows and error values
 - [ ] SUBTOTAL	Performs a specified calculation (eg. the sum, product, average, etc.) for a supplied set of values
+
+#### Trigonometry Functions 
+
+- [x] PI	Returns the constant value of pi
+- [x] SQRTPI	Returns the square root of a supplied number multiplied by pi
+- [x] DEGREES	Converts Radians to Degrees
+- [x] RADIANS	Converts Degrees to Radians
+- [x] COS	Returns the Cosine of a given angle
+- [x] ACOS	Returns the Arccosine of a number
+- [x] COSH	Returns the hyperbolic cosine of a number
+- [x] ACOSH	Returns the inverse hyperbolic cosine of a number
+- [x] SEC	Returns the secant of an angle (New in Excel 2013)
+- [x] SECH	Returns the hyperbolic secant of an angle (New in Excel 2013)
+- [x] SIN	Returns the Sine of a given angle
+- [x] ASIN	Returns the Arcsine of a number
+- [x] SINH	Returns the Hyperbolic Sine of a number
+- [x] ASINH	Returns the Inverse Hyperbolic Sine of a number
+- [x] CSC	Returns the cosecant of an angle (New in Excel 2013)
+- [x] CSCH	Returns the hyperbolic cosecant of an angle (New in Excel 2013)
+- [x] TAN	Returns the Tangent of a given angle
+- [x] ATAN	Returns the Arctangent of a given number
+- [x] ATAN2	Returns the Arctangent of a given pair of x and y coordinates
+- [x] TANH	Returns the Hyperbolic Tangent of a given number
+- [x] ATANH	Returns the Inverse Hyperbolic Tangent of a given number
+- [x] COT	Returns the cotangent of an angle (New in Excel 2013)
+- [x] COTH	Returns the hyperbolic cotangent of an angle (New in Excel 2013)
+- [ ] ACOT	Returns the arccotangent of a number (New in Excel 2013)
+- [ ] ACOTH	Returns the hyperbolic arccotangent of a number (New in Excel 2013)

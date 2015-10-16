@@ -169,3 +169,65 @@ func Csc(number float64) float64 {
 func CscH(number float64) float64 {
 	return 1 / SinH(number)
 }
+
+// Tan function calculates the tangent of a given angle
+func Tan(number float64) float64 {
+	v, err := validateTrigonometry(number)
+	if err != nil {
+		log.Println(err)
+		return 0.0
+	}
+	return math.Tan(v.Number)
+}
+
+// Atan returns the Arctangent of a given number
+func Atan(number float64) float64 {
+	v, err := validateTrigonometry(number)
+	if err != nil {
+		log.Println(err)
+		return 0.0
+	}
+	return math.Atan(v.Number)
+}
+
+//Atan2 Returns the Arctangent of a given pair of x and y coordinates
+func Atan2(x, y float64) float64 {
+	xValue, err := validateTrigonometry(x)
+	if err != nil {
+		log.Println(err)
+		return 0.0
+	}
+
+	yValue, err := validateTrigonometry(y)
+	if err != nil {
+		log.Println(err)
+		return 0.0
+	}
+
+	return math.Atan2(xValue.Number, yValue.Number)
+}
+
+//TanH Returns the Hyperbolic Tangent of a given number
+func TanH(number float64) float64 {
+	return SinH(number) / CosH(number)
+}
+
+// AtanH function calculates the inverse hyperbolic tangent of a supplied number
+func AtanH(number float64) float64 {
+	v, err := validateTrigonometry(number)
+	if err != nil {
+		log.Println(err)
+		return 0.0
+	}
+	return math.Atanh(v.Number)
+}
+
+// Cot returns the cotangent of an angle
+func Cot(number float64) float64 {
+	return 1 / Tan(number)
+}
+
+//CotH returns the hyperbolic cotangent of an angle
+func CotH(number float64) float64 {
+	return 1 / TanH(number)
+}
