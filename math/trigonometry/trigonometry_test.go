@@ -22,4 +22,20 @@ func TestTrigonometry(t *testing.T) {
 	if Radians(270) != 4.712388980384685 {
 		t.Errorf("Radians function failed ... ")
 	}
+
+	if Cos(0.785398163) != 0.707106781467586 {
+		t.Errorf("Cos function failed ... ")
+	}
+
+	if Cos(0) != 1 {
+		t.Errorf("Cos function failed ... ")
+	}
+
+	if Cos(-PI()/3) != 0.5000000000000009 {
+		t.Errorf("Cos function failed ... ")
+	}
+
+	if Cos(Radians(-30)) != 0.8660254037844389 {
+		t.Errorf("Cos function failed ... ")
+	}
 }
