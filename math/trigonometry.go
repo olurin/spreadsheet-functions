@@ -4,7 +4,6 @@ import (
 	"log"
 	"math"
 
-	"github.com/TaperBox/spreadsheet-functions/math/basic-mathematical-operations"
 	"gopkg.in/go-playground/validator.v8"
 )
 
@@ -40,7 +39,7 @@ func SqrtPI(number float64) float64 {
 		log.Println(err)
 		return 0.0
 	}
-	return spreadsheet.Sqrt(v.Number * PI())
+	return Sqrt(v.Number * PI())
 }
 
 // Degree Converts radians into degrees.

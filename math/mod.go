@@ -3,8 +3,6 @@ package spreadsheet
 import (
 	"log"
 
-	"github.com/TaperBox/spreadsheet-functions/math/basic-numeric-information"
-
 	"gopkg.in/go-playground/validator.v8"
 )
 
@@ -35,6 +33,6 @@ func Mod(number, divisor float64) float64 {
 		return 0.0
 	}
 
-	sign := spreadsheet.Sign(v.Divisor)
-	return sign * (spreadsheet.Abs(v.Number) - spreadsheet.Abs(v.Divisor)*float64(int(spreadsheet.Abs(v.Number)/spreadsheet.Abs(v.Divisor))))
+	sign := Sign(v.Divisor)
+	return sign * (Abs(v.Number) - Abs(v.Divisor)*float64(int(Abs(v.Number)/Abs(v.Divisor))))
 }
