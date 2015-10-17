@@ -4,7 +4,8 @@ import (
 	"log"
 	"math"
 
-	"github.com/TaperBox/spreadsheet-functions/lib"
+	"github.com/TaperBox/formula/lib"
+
 	"gopkg.in/go-playground/validator.v8"
 )
 

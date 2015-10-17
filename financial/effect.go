@@ -3,8 +3,8 @@ package spreadsheet
 import (
 	"log"
 
-	"github.com/TaperBox/spreadsheet-functions/lib"
-	"github.com/TaperBox/spreadsheet-functions/math/basic-mathematical-operations"
+	"github.com/TaperBox/formula/lib"
+	"github.com/TaperBox/formula/math"
 	"gopkg.in/go-playground/validator.v8"
 )
 
