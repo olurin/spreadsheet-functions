@@ -1,6 +1,6 @@
 # SpreadSheet Functions
 
-[![Build Status](https://travis-ci.org/TaperBox/spreadsheet-functions.svg)](https://travis-ci.org/TaperBox/spreadsheet-functions)
+[![Build Status](https://travis-ci.org/TaperBox/formula.svg?branch=master)](https://travis-ci.org/TaperBox/formula)
 
 Golang implementation of most Spreadsheet formula/functions
 
@@ -9,9 +9,9 @@ Golang implementation of most Spreadsheet formula/functions
 ##### Math and Trigonometric Functions List 	  
 - [x] Basic Numeric Information
 - [x] Exponents & Logarithms				  
-- [ ] Basic Mathematical Operations			  
+- [x] Basic Mathematical Operations			  
 - [ ] Rounding Functions	                  
-- [ ] Trigonometry Functions				  
+- [x] Trigonometry Functions				  
 - [ ] Advanced Mathematical Operations		  
 - [ ] Matrix Functions						                    
 - [ ] Factorials							  
