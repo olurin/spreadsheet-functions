@@ -291,3 +291,53 @@ func BenchmarkLog10(b *testing.B) {
 		Log10(23.98)
 	}
 }
+
+func TestMod(t *testing.T) {
+
+	result, err := Mod(3, 2)
+
+	if err != nil {
+		t.Errorf("Mod Function returned an error")
+	}
+
+	if result != 1 {
+		t.Errorf("Mod Function Failed Mod(3, 2) ... ")
+	}
+
+	result, err = Mod(-3, 2)
+
+	if err != nil {
+		t.Errorf("Mod Function returned an error")
+	}
+
+	if result != 1 {
+		t.Errorf("Mod Function Failed  Mod(-3, 2) ... ")
+	}
+
+	result, err = Mod(3, -2)
+
+	if err != nil {
+		t.Errorf("Mod Function returned an error")
+	}
+
+	if result != -1 {
+		t.Errorf("Mod Function Failed  Mod(3, -2) ... ")
+	}
+
+	result, err = Mod(-3, -2)
+
+	if err != nil {
+		t.Errorf("Mod Function returned an error")
+	}
+
+	if result != -1 {
+		t.Errorf("Mod Function Failed Mod(-3, -2) ... ")
+	}
+
+}
+
+func BenchmarkMod(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Mod(3, -2)
+	}
+}

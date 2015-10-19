@@ -3,19 +3,44 @@ package mathlib
 import "testing"
 
 func TestMod(t *testing.T) {
-	if Mod(3, 2) != 1 {
+
+	result, err := Mod(3, 2)
+
+	if err != nil {
+		t.Errorf("Mod Function returned an error")
+	}
+
+	if result != 1 {
 		t.Errorf("Mod Function Failed Mod(3, 2) ... ")
 	}
 
-	if Mod(-3, 2) != 1 {
+	result, err = Mod(-3, 2)
+
+	if err != nil {
+		t.Errorf("Mod Function returned an error")
+	}
+
+	if result != 1 {
 		t.Errorf("Mod Function Failed  Mod(-3, 2) ... ")
 	}
 
-	if Mod(3, -2) != -1 {
+	result, err = Mod(3, -2)
+
+	if err != nil {
+		t.Errorf("Mod Function returned an error")
+	}
+
+	if result != -1 {
 		t.Errorf("Mod Function Failed  Mod(3, -2) ... ")
 	}
 
-	if Mod(-3, -2) != -1 {
+	result, err = Mod(-3, -2)
+
+	if err != nil {
+		t.Errorf("Mod Function returned an error")
+	}
+
+	if result != -1 {
 		t.Errorf("Mod Function Failed Mod(-3, -2) ... ")
 	}
 
