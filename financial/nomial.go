@@ -4,7 +4,7 @@ import (
 	"log"
 	"math"
 
-	"github.com/TaperBox/formulas/lib"
+	"github.com/TaperBox/formulas/math"
 
 	"gopkg.in/go-playground/validator.v8"
 )
@@ -49,7 +49,7 @@ func validateNominal(npery, effectrate float64) (*NominalStruct, error) {
 }
 
 func (e *NominalStruct) nominal() float64 {
-	npery := mathlibs.Round(e.Npery, 0)
+	npery := mathlib.Round(e.Npery, 0)
 	return npery * (math.Pow(((e.EffectRate/100)+1), 1.0/npery) - 1)
 
 }

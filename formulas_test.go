@@ -365,3 +365,26 @@ func BenchmarkPower(b *testing.B) {
 		Power(100, 10)
 	}
 }
+
+func TestRound(t *testing.T) {
+
+	if Round(4.05, 0) != 4 {
+		t.Errorf("Round function in Math library failed...")
+	}
+	if Round(4.05, 2) != 4.05 {
+		t.Errorf("Round function in Math library failed...")
+	}
+	if Round(4.05, 1) != 4.1 {
+		t.Errorf("Round function in Math library failed...")
+	}
+
+	if Round(4.05, 10) != 4.05 {
+		t.Errorf("Round function in Math library failed...")
+	}
+}
+
+func BenchmarkRound(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Round(100.908398734, 3)
+	}
+}

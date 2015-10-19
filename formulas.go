@@ -25,3 +25,6 @@ func Mod(number, divisor float64) (float64, error) { return mathlib.Mod(number, 
 
 // Power returns the result of a number raised to a power
 func Power(number, power float64) (float64, error) { return mathlib.Power(number, power) }
+
+// Round rounds a number to a specified number of digits
+func Round(number float64, numDigits int) float64 { return mathlib.Round(number, numDigits) }
