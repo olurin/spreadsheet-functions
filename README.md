@@ -1,4 +1,4 @@
-# SpreadSheet Functions
+# Excel Formulas
 
 [![Build Status](https://travis-ci.org/TaperBox/formula.svg?branch=master)](https://travis-ci.org/TaperBox/formula)
 
@@ -17,6 +17,7 @@ Golang implementation of most Spreadsheet formula/functions
 - [ ] Factorials							  
 - [ ] Miscellaneous     					  
 - [ ] Conditional Sums 						  
+
 
 
     

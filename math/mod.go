@@ -1,10 +1,6 @@
-package spreadsheet
+package mathlib
 
-import (
-	"log"
-
-	"gopkg.in/go-playground/validator.v8"
-)
+import "gopkg.in/go-playground/validator.v8"
 
 // ModStruct srtuct
 type ModStruct struct {
@@ -29,10 +25,11 @@ func validateMod(number, divisor float64) (*ModStruct, error) {
 func Mod(number, divisor float64) float64 {
 	v, err := validateMod(number, divisor)
 	if err != nil {
-		log.Println(err)
 		return 0.0
 	}
-
 	sign := Sign(v.Divisor)
-	return sign * (Abs(v.Number) - Abs(v.Divisor)*float64(int(Abs(v.Number)/Abs(v.Divisor))))
+	number, err = Abs(v.Number)
+	divisor, err = Abs(v.Divisor)
+
+	return sign * ((number) - (divisor)*float64(int((number)/(divisor))))
 }

@@ -1,41 +1,17 @@
-package spreadsheet
+package mathlib
 
 import (
-	"log"
+	"errors"
 	"math"
-
-	"gopkg.in/go-playground/validator.v8"
 )
 
-// The Excel EXP function calculates the value of the mathematical constant e, raised to the power of a given number.
-// The format of the function is:
-// EXP( number )
+// Exp function returns e raised to a given power
+func Exp(number float64) (float64, error) {
 
-// ExpStruct struct
-type ExpStruct struct {
-	Number float64 `validate:"required"`
-}
-
-func validateEXP(num float64) (*ExpStruct, error) {
-	validate := validator.New(&validator.Config{TagName: "validate"})
-	exp := &ExpStruct{
-		Number: num,
+	// Validate Number
+	if math.IsNaN(number) {
+		return 0.0, errors.New("#VALUE!, Occurs if the supplied number argument cannot be recognised as numeric value")
 	}
 
-	errs := validate.Struct(exp)
-	if errs != nil {
-		log.Println(errs)
-		return nil, errs
-	}
-	return exp, nil
-}
-
-// Exp function
-func Exp(num float64) float64 {
-	v, err := validateEXP(num)
-	if err != nil {
-		return 0.0
-	}
-
-	return math.Exp(v.Number)
+	return math.Exp(number), nil
 }

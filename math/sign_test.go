@@ -1,4 +1,4 @@
-package spreadsheet
+package mathlib
 
 import "testing"
 

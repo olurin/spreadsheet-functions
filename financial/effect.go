@@ -1,10 +1,9 @@
-package spreadsheet
+package financial
 
 import (
 	"log"
 
-	"github.com/TaperBox/formula/lib"
-	"github.com/TaperBox/formula/math"
+	"github.com/TaperBox/formulas/lib"
 	"gopkg.in/go-playground/validator.v8"
 )
 

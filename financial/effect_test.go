@@ -1,4 +1,4 @@
-package spreadsheet
+package financial
 
 import "testing"
 

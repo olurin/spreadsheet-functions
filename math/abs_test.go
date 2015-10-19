@@ -1,16 +1,37 @@
-package spreadsheet
+package mathlib
 
 import "testing"
 
 func TestAbs(t *testing.T) {
 
-	// number:  The real number of which you want the absolute value.
-	number := 9.0
-	if Abs(number) != 9 {
-		t.Errorf("Absolute (Abs) Function Failed ... ")
+	x := 9.0
+	y := -10.0
+	z := -10.34
+
+	t1, err := Abs(x)
+	if err != nil {
+		t.Errorf("Abs Function returned an error")
 	}
 
-	if Abs(-9) != 9 {
-		t.Errorf("Absolute (Abs) Function Failed ... ")
+	if t1 != 9 {
+		t.Errorf("Abs Function failed")
+	}
+
+	t1, err = Abs(y)
+	if err != nil {
+		t.Errorf("Abs Function returned an error")
+	}
+
+	if t1 != 10.0 {
+		t.Errorf("Abs Function failed")
+	}
+
+	t1, err = Abs(z)
+	if err != nil {
+		t.Errorf("Abs Function returned an error")
+	}
+
+	if t1 != 10.34 {
+		t.Errorf("Abs Function failed")
 	}
 }
