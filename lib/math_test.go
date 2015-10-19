@@ -1,4 +1,4 @@
-package mathlib
+package mathlibs
 
 import "testing"
 

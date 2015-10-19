@@ -22,3 +22,6 @@ func Log10(number float64) (float64, error) { return mathlib.Log10(number) }
 
 // Mod returns the remainder after number is divided by divisor. The result has the same sign as divisor
 func Mod(number, divisor float64) (float64, error) { return mathlib.Mod(number, divisor) }
+
+// Power returns the result of a number raised to a power
+func Power(number, power float64) (float64, error) { return mathlib.Power(number, power) }

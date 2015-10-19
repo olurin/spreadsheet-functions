@@ -8,8 +8,8 @@ import (
 // Mod returns the remainder after number is divided by divisor. The result has the same sign as divisor.
 func Mod(number, divisor float64) (float64, error) {
 
-	if math.IsNaN(divisor) && math.IsNaN(number) {
-		return 0.0, errors.New("#NUM Error! - supplied number argument is negative or zero")
+	if math.IsNaN(divisor) || math.IsNaN(number) {
+		return 0.0, errors.New("#NUM Error! - supplied number or divisor argument is negative or zero")
 	}
 
 	if divisor == 0 {

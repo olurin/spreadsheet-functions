@@ -341,3 +341,27 @@ func BenchmarkMod(b *testing.B) {
 		Mod(3, -2)
 	}
 }
+
+func TestPower(t *testing.T) {
+
+	p, err := Power(10, 4)
+	if p != 10000 && err != nil {
+		t.Errorf("Product Function Failed ... ")
+	}
+
+	p, err = Power(2, 4)
+	if p != 32 && err != nil {
+		t.Errorf("Product Function Failed ... ")
+	}
+
+	p, err = Power(5, 2)
+	if p != 25 && err != nil {
+		t.Errorf("Product Function Failed ... ")
+	}
+}
+
+func BenchmarkPower(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Power(100, 10)
+	}
+}

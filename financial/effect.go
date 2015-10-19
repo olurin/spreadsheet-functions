@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/TaperBox/formulas/lib"
+	"github.com/TaperBox/formulas/math"
 	"gopkg.in/go-playground/validator.v8"
 )
 
@@ -52,8 +53,8 @@ func validateEffect(npery, nominalrate float64) (*EffectStruct, error) {
 }
 
 func (e *EffectStruct) effect() (float64, error) {
-	npery := mathlib.Round(e.Npery, 0)
-	p, err := spreadsheet.Power((1 + (e.NominalRate/100)/npery), npery)
+	npery := mathlibs.Round(e.Npery, 0)
+	p, err := mathlib.Power((1 + (e.NominalRate/100)/npery), npery)
 	return p - 1, err
 }
 
