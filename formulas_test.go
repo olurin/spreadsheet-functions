@@ -249,3 +249,45 @@ func BenchmarkLN(b *testing.B) {
 		LN(23.98)
 	}
 }
+
+func TestLog10(t *testing.T) {
+
+	x := 86.0
+	y := 100.0
+	z := 10.0
+
+	result, err := Log10(x)
+	if err != nil {
+		t.Errorf("Log10 Function returned an error")
+	}
+
+	if result != 1.9344984512435675 {
+		t.Errorf("Log10 Function Failed ... ")
+	}
+
+	result, err = Log10(y)
+
+	if err != nil {
+		t.Errorf("Log10 Function returned an error")
+	}
+
+	if result != 2 {
+		t.Errorf("Log10 Function Failed ... ")
+	}
+
+	result, err = Log10(z)
+
+	if err != nil {
+		t.Errorf("Log10 Function returned an error")
+	}
+
+	if result != 1 {
+		t.Errorf("Log10 Function Failed ... ")
+	}
+}
+
+func BenchmarkLog10(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Log10(23.98)
+	}
+}

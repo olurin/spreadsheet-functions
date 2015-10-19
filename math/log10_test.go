@@ -4,15 +4,36 @@ import "testing"
 
 func TestLog10(t *testing.T) {
 
-	if Log10(86) != 1.9344984512435675 {
+	x := 86.0
+	y := 100.0
+	z := 10.0
+
+	result, err := Log10(x)
+	if err != nil {
+		t.Errorf("Log10 Function returned an error")
+	}
+
+	if result != 1.9344984512435675 {
 		t.Errorf("Log10 Function Failed ... ")
 	}
 
-	if Log10(100) != 2 {
+	result, err = Log10(y)
+
+	if err != nil {
+		t.Errorf("Log10 Function returned an error")
+	}
+
+	if result != 2 {
 		t.Errorf("Log10 Function Failed ... ")
 	}
 
-	if Log10(10) != 1 {
+	result, err = Log10(z)
+
+	if err != nil {
+		t.Errorf("Log10 Function returned an error")
+	}
+
+	if result != 1 {
 		t.Errorf("Log10 Function Failed ... ")
 	}
 }

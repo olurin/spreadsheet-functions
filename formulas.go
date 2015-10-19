@@ -16,3 +16,6 @@ func LCM(numbers []int) (int, error) { return mathlib.LCM(numbers) }
 
 // LN returns the natural logarithm of a given number
 func LN(number float64) (float64, error) { return mathlib.LN(number) }
+
+// Log10 returns the base 10 logarithm of a given number
+func Log10(number float64) (float64, error) { return mathlib.Log10(number) }
