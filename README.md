@@ -4,8 +4,6 @@
 
 Golang implementation of most Spreadsheet formula/functions
 
-#### Functions (Todo)
-
 ##### Math and Trigonometric Functions List 	  
 - [x] Basic Numeric Information
 - [x] Exponents & Logarithms				  
@@ -18,6 +16,14 @@ Golang implementation of most Spreadsheet formula/functions
 - [ ] Miscellaneous     					  
 - [ ] Conditional Sums 						  
 
-
-
+#####  Financial Functions List
+- [ ] Investment Value Functions
+- [ ] Price Functions
+- [ ] Internal Rate of Return Functions
+- [ ] Asset Depreciation Functions
+- [ ] Dollar Conversion
+- [ ] Payment Functions
+- [ ] Interest Rate Functions
+- [ ] Yield Functions
+- [ ] Duration Functions
     

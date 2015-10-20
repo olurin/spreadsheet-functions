@@ -3,28 +3,7 @@ package mathlib
 import (
 	"log"
 	"math"
-
-	"gopkg.in/go-playground/validator.v8"
 )
-
-// TrigonometryStruct struct
-type TrigonometryStruct struct {
-	Number float64
-}
-
-func validateTrigonometry(number float64) (*TrigonometryStruct, error) {
-	validate := validator.New(&validator.Config{TagName: "validate"})
-	tri := &TrigonometryStruct{
-		Number: number,
-	}
-
-	errs := validate.Struct(tri)
-	if errs != nil {
-		return nil, errs
-	}
-
-	return tri, nil
-}
 
 // PI Returns the constant value of pi
 func PI() float64 {

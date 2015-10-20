@@ -28,3 +28,6 @@ func Power(number, power float64) (float64, error) { return mathlib.Power(number
 
 // Round rounds a number to a specified number of digits
 func Round(number float64, numDigits int) float64 { return mathlib.Round(number, numDigits) }
+
+// PI Returns the constant value of pi
+func PI() float64 { return 3.14159265358979 }
