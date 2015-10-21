@@ -36,7 +36,7 @@ func PI() float64 { return 3.14159265358979 }
 func SqrtPI(number float64) (float64, error) { return mathlib.SqrtPI(number) }
 
 // Degree converts radians into degrees.
-func Degree(radian float64) (float64, error) { return mathlib.Degree(radians) }
+func Degree(radian float64) (float64, error) { return mathlib.Degree(radian) }
 
 // Radians converts Degrees to Radians
 func Radians(degree float64) (float64, error) { return mathlib.Radians(degree) }
@@ -45,4 +45,10 @@ func Radians(degree float64) (float64, error) { return mathlib.Radians(degree) }
 func Cos(degree float64) (float64, error) { return mathlib.Cos(degree) }
 
 //Acos returns the Arccosine of a number
-func Acos(number float64) (float64, error) { return mathlib.Acos(degree) }
+func Acos(number float64) (float64, error) { return mathlib.Acos(number) }
+
+//CosH returns the hyperbolic cosine of x
+func CosH(number float64) (float64, error) { return mathlib.CosH(number) }
+
+//AcosH returns the inverse hyperbolic cosine of x
+func AcosH(number float64) (float64, error) { return mathlib.AcosH(number) }
