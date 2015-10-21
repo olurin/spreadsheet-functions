@@ -56,5 +56,5 @@ The tables below list all the current built-in Microsoft Excel math functions, g
 - [x] ATANH	Returns the Inverse Hyperbolic Tangent of a given number
 - [x] COT	Returns the cotangent of an angle (New in Excel 2013)
 - [x] COTH	Returns the hyperbolic cotangent of an angle (New in Excel 2013)
-- [ ] ACOT	Returns the arccotangent of a number (New in Excel 2013)
-- [ ] ACOTH	Returns the hyperbolic arccotangent of a number (New in Excel 2013)
+- [x] ACOT	Returns the arccotangent of a number (New in Excel 2013)
+- [x] ACOTH	Returns the hyperbolic arccotangent of a number (New in Excel 2013)

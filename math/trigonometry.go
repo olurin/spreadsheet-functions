@@ -327,3 +327,22 @@ func Acot(number float64) (float64, error) {
 
 	return v, nil
 }
+
+//AcotH returns the hyperbolic arccotangent of a number
+func AcotH(number float64) (float64, error) {
+
+	// Validate Number - Common Errors
+	if number >= -1 && number <= 1 {
+		return 0.0, errors.New("#NUM!	-	Occurred because supplied number argument is between -1 and +1 (inclusive)")
+	}
+
+	if math.IsNaN(number) {
+		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+	}
+
+	v, err := LN((number + 1) / (number - 1))
+	if err != nil {
+		return 0.0, err
+	}
+	return (0.5 * v), nil
+}
