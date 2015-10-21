@@ -96,7 +96,7 @@ func AcosH(number float64) (float64, error) {
 	return math.Acosh(number), nil
 }
 
-//Sec returns the secant of an angle (New in Excel 2013)
+//Sec returns the secant of an angle
 func Sec(number float64) (float64, error) {
 
 	if number < -134217728 || number > 134217728 {
