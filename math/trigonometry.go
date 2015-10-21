@@ -23,7 +23,7 @@ func SqrtPI(number float64) (float64, error) {
 		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
 	}
 
-	return Sqrt(number * PI()), nil
+	return math.Sqrt(number * PI()), nil
 }
 
 // Degree Converts radians into degrees.

@@ -1,35 +1,19 @@
 package mathlib
 
 import (
-	"log"
+	"errors"
 	"math"
-
-	"gopkg.in/go-playground/validator.v8"
 )
 
-// SqrtStruct struct
-type SqrtStruct struct {
-	Number float64 `validate:"required"`
-}
+// Sqrt returns the positive square root of a given number
+func Sqrt(number float64) (float64, error) {
+	if number < 0 {
+		return 0.0, errors.New("#NUM!	-	Occurred because the supplied number argument is negative")
+	}
 
-func validateSqrt(number float64) (*SqrtStruct, error) {
-	validate := validator.New(&validator.Config{TagName: "validate"})
-	sq := &SqrtStruct{
-		Number: number,
+	if math.IsNaN(number) {
+		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
 	}
-	errs := validate.Struct(sq)
-	if errs != nil {
-		return nil, errs
-	}
-	return sq, nil
-}
 
-// Sqrt function
-func Sqrt(number float64) float64 {
-	v, err := validateSqrt(number)
-	if err != nil {
-		log.Println(err)
-		return 0.0
-	}
-	return math.Sqrt(v.Number)
+	return math.Sqrt(number), nil
 }
