@@ -31,3 +31,12 @@ func Round(number float64, numDigits int) float64 { return mathlib.Round(number,
 
 // PI Returns the constant value of pi
 func PI() float64 { return 3.14159265358979 }
+
+// SqrtPI returns the square root of a supplied number multiplied by pi
+func SqrtPI(number float64) (float64, error) { return mathlib.SqrtPI(number) }
+
+// Degree converts radians into degrees.
+func Degree(radian float64) float64 { return mathlib.Degree(radians) }
+
+// Radians converts Degrees to Radians
+func Radians(degree float64) float64 { return mathlib.Radians(degree) }
