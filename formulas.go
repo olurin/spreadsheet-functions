@@ -29,6 +29,17 @@ func Power(number, power float64) (float64, error) { return mathlib.Power(number
 // Round rounds a number to a specified number of digits
 func Round(number float64, numDigits int) float64 { return mathlib.Round(number, numDigits) }
 
+// Product returns the product of a supplied list of numbers
+func Product(numbers []float64) (float64, error) { return mathlib.Product(numbers) }
+
+// Quotient returns the integer portion of a division between two supplied numbers
+func Quotient(numerator, denominator float64) (int, error) {
+	return mathlib.Quotient(numerator, denominator)
+}
+
+// Sign function returns the sign (+1, -1 or 0) of a supplied number
+func Sign(number float64) float64 { return mathlib.Sign(number) }
+
 // PI Returns the constant value of pi
 func PI() float64 { return 3.14159265358979 }
 

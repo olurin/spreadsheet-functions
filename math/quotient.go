@@ -1,39 +1,19 @@
 package mathlib
 
 import (
-	"log"
-
-	"gopkg.in/go-playground/validator.v8"
+	"errors"
+	"math"
 )
 
-// QuotientStruct struct
-type QuotientStruct struct {
-	Numerator   float64 `validate:"required"`
-	Denominator float64 `validate:"required"`
-}
-
-func validateQuotient(num, den float64) (*QuotientStruct, error) {
-	validate := validator.New(&validator.Config{TagName: "validate"})
-
-	quo := &QuotientStruct{
-		Numerator:   num,
-		Denominator: den,
+// Quotient returns the integer portion of a division between two supplied numbers
+func Quotient(numerator, denominator float64) (int, error) {
+	if denominator == 0 {
+		return 0.0, errors.New("#DIV/0!	- Occurred because the supplied denominator argument is zero")
 	}
 
-	errs := validate.Struct(quo)
-	if errs != nil {
-		return nil, errs
-	}
-	return quo, nil
-}
-
-// Quotient function
-func Quotient(numerator, denominator float64) int {
-	v, err := validateQuotient(numerator, denominator)
-	if err != nil {
-		log.Println(err)
-		return 0
+	if math.IsNaN(numerator) || math.IsNaN(denominator) {
+		return 0.0, errors.New("#VALUE!	- Occurred because  the supplied arguments are non-numeric ")
 	}
 
-	return int(v.Numerator / v.Denominator)
+	return int(numerator / denominator), nil
 }
