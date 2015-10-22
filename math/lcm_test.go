@@ -9,7 +9,7 @@ func TestLCM(t *testing.T) {
 	c := []int{1, 8, 12}
 	x := []int{7, 2}
 
-	result, err := LCM(a)
+	result, err := LCM(a...)
 
 	if err != nil {
 		t.Errorf("LCM Function returned an error")
@@ -19,7 +19,7 @@ func TestLCM(t *testing.T) {
 		t.Errorf("LCM Function Failed ")
 	}
 
-	result, err = LCM(b)
+	result, err = LCM(b...)
 
 	if err != nil {
 		t.Errorf("Abs Function returned an error")
@@ -29,7 +29,7 @@ func TestLCM(t *testing.T) {
 		t.Errorf("LCM Function Failed ")
 	}
 
-	result, err = LCM(c)
+	result, err = LCM(c...)
 
 	if err != nil {
 		t.Errorf("LCM Function returned an error")
@@ -39,7 +39,7 @@ func TestLCM(t *testing.T) {
 		t.Errorf("LCM Function Failed ")
 	}
 
-	result, err = LCM(x)
+	result, err = LCM(x...)
 
 	if err != nil {
 		t.Errorf("LCM Function returned an error")

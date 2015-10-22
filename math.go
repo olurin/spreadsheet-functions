@@ -9,10 +9,10 @@ func Abs(number float64) (float64, error) { return mathlib.Abs(number) }
 func Exp(number float64) (float64, error) { return mathlib.Exp(number) }
 
 // GCD returns the Greatest Common Divisor of two or more supplied numbers
-func GCD(numbers []int) (int, error) { return mathlib.GCD(numbers) }
+func GCD(numbers ...int) (int, error) { return mathlib.GCD(numbers...) }
 
 // LCM returns the Least Common Multiple of two or more supplied numbers
-func LCM(numbers []int) (int, error) { return mathlib.LCM(numbers) }
+func LCM(numbers ...int) (int, error) { return mathlib.LCM(numbers...) }
 
 // LN returns the natural logarithm of a given number
 func LN(number float64) (float64, error) { return mathlib.LN(number) }
@@ -30,7 +30,10 @@ func Power(number, power float64) (float64, error) { return mathlib.Power(number
 func Round(number float64, numDigits int) float64 { return mathlib.Round(number, numDigits) }
 
 // Product returns the product of a supplied list of numbers
-func Product(numbers []float64) (float64, error) { return mathlib.Product(numbers) }
+func Product(numbers ...float64) (float64, error) { return mathlib.Product(numbers...) }
+
+// Sum returns the sum of a supplied list of numbers
+func Sum(numbers ...float64) (float64, error) { return mathlib.Sum(numbers...) }
 
 // Quotient returns the integer portion of a division between two supplied numbers
 func Quotient(numerator, denominator float64) (int, error) {

@@ -3,7 +3,7 @@ package mathlib
 import "errors"
 
 // LCM function
-func LCM(numbers []int) (int, error) {
+func LCM(numbers ...int) (int, error) {
 
 	// Validate Numbers
 	if len(numbers) <= 1 {

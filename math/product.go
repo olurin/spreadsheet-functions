@@ -6,7 +6,7 @@ import (
 )
 
 // Product returns the product of a supplied list of numbers
-func Product(numbers []float64) (float64, error) {
+func Product(numbers ...float64) (float64, error) {
 
 	product := 1.0
 

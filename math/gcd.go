@@ -32,7 +32,7 @@ func gcd(m, n int) int {
 // The format of the function is :   GCD( number1, number2, ...)
 // Where the number arguments are up to 255 numerical values for which you want to calculate the greatest common divisor.
 // If any of the supplied numbers are not integers, these values are truncated to integers.
-func GCD(numbers []int) (int, error) {
+func GCD(numbers ...int) (int, error) {
 
 	// Validate Numbers
 	if len(numbers) <= 1 {

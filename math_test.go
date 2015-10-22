@@ -94,7 +94,7 @@ func TestGCD(t *testing.T) {
 	y := []int{5, 0}
 	z := []int{15, 10, 25}
 
-	result, err := GCD(a)
+	result, err := GCD(a...)
 
 	if err != nil {
 		t.Errorf("GCD Function returned an error")
@@ -104,7 +104,7 @@ func TestGCD(t *testing.T) {
 		t.Errorf("GCD Function Failed ")
 	}
 
-	result, err = GCD(b)
+	result, err = GCD(b...)
 
 	if err != nil {
 		t.Errorf("GCD Function returned an error")
@@ -114,7 +114,7 @@ func TestGCD(t *testing.T) {
 		t.Errorf("GCD Function Failed ")
 	}
 
-	result, err = GCD(c)
+	result, err = GCD(c...)
 
 	if err != nil {
 		t.Errorf("GCD Function returned an error")
@@ -124,7 +124,7 @@ func TestGCD(t *testing.T) {
 		t.Errorf("GCD Function Failed ")
 	}
 
-	result, err = GCD(x)
+	result, err = GCD(x...)
 
 	if err != nil {
 		t.Errorf("GCD Function returned an error")
@@ -134,7 +134,7 @@ func TestGCD(t *testing.T) {
 		t.Errorf("GCD Function Failed ")
 	}
 
-	result, err = GCD(y)
+	result, err = GCD(y...)
 
 	if err != nil {
 		t.Errorf("GCD Function returned an error")
@@ -144,7 +144,7 @@ func TestGCD(t *testing.T) {
 		t.Errorf("GCD Function Failed ")
 	}
 
-	result, err = GCD(z)
+	result, err = GCD(z...)
 
 	if err != nil {
 		t.Errorf("GCD Function returned an error")
@@ -158,7 +158,7 @@ func TestGCD(t *testing.T) {
 
 func BenchmarkGCD(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		GCD([]int{203, 91, 77})
+		GCD(203, 91, 77)
 	}
 }
 
@@ -169,7 +169,7 @@ func TestLCM(t *testing.T) {
 	c := []int{1, 8, 12}
 	x := []int{7, 2}
 
-	result, err := LCM(a)
+	result, err := LCM(a...)
 
 	if err != nil {
 		t.Errorf("LCM Function returned an error")
@@ -179,7 +179,7 @@ func TestLCM(t *testing.T) {
 		t.Errorf("LCM Function Failed ")
 	}
 
-	result, err = LCM(b)
+	result, err = LCM(b...)
 
 	if err != nil {
 		t.Errorf("Abs Function returned an error")
@@ -189,7 +189,7 @@ func TestLCM(t *testing.T) {
 		t.Errorf("LCM Function Failed ")
 	}
 
-	result, err = LCM(c)
+	result, err = LCM(c...)
 
 	if err != nil {
 		t.Errorf("LCM Function returned an error")
@@ -199,7 +199,7 @@ func TestLCM(t *testing.T) {
 		t.Errorf("LCM Function Failed ")
 	}
 
-	result, err = LCM(x)
+	result, err = LCM(x...)
 
 	if err != nil {
 		t.Errorf("LCM Function returned an error")
@@ -213,7 +213,7 @@ func TestLCM(t *testing.T) {
 
 func BenchmarkLCM(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		LCM([]int{203, 91, 77})
+		LCM(203, 91, 77)
 	}
 }
 

@@ -5,13 +5,13 @@ import "testing"
 func TestGCD(t *testing.T) {
 
 	a := []int{203, 91, 77}
-	b := []int{77, 91, 203}
+	// b := []int{77, 91, 203}
 	c := []int{5, 2}
 	x := []int{24, 36}
 	y := []int{5, 0}
 	z := []int{15, 10, 25}
 
-	result, err := GCD(a)
+	result, err := GCD(a...)
 
 	if err != nil {
 		t.Errorf("GCD Function returned an error")
@@ -21,7 +21,7 @@ func TestGCD(t *testing.T) {
 		t.Errorf("GCD Function Failed ")
 	}
 
-	result, err = GCD(b)
+	result, err = GCD(77, 91, 203)
 
 	if err != nil {
 		t.Errorf("GCD Function returned an error")
@@ -31,7 +31,7 @@ func TestGCD(t *testing.T) {
 		t.Errorf("GCD Function Failed ")
 	}
 
-	result, err = GCD(c)
+	result, err = GCD(c...)
 
 	if err != nil {
 		t.Errorf("GCD Function returned an error")
@@ -41,7 +41,7 @@ func TestGCD(t *testing.T) {
 		t.Errorf("GCD Function Failed ")
 	}
 
-	result, err = GCD(x)
+	result, err = GCD(x...)
 
 	if err != nil {
 		t.Errorf("GCD Function returned an error")
@@ -51,7 +51,7 @@ func TestGCD(t *testing.T) {
 		t.Errorf("GCD Function Failed ")
 	}
 
-	result, err = GCD(y)
+	result, err = GCD(y...)
 
 	if err != nil {
 		t.Errorf("GCD Function returned an error")
@@ -61,7 +61,7 @@ func TestGCD(t *testing.T) {
 		t.Errorf("GCD Function Failed ")
 	}
 
-	result, err = GCD(z)
+	result, err = GCD(z...)
 
 	if err != nil {
 		t.Errorf("GCD Function returned an error")
