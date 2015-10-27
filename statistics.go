@@ -28,5 +28,5 @@ func Harmean(numbers ...float64) (float64, error) { return statistics.Harmean(nu
 
 // TrimMean returns the mean of the interior of a supplied set of values
 func TrimMean(percent float64, arrays ...float64) (float64, error) {
-	return statistics.Harmean(numbers...)
+	return statistics.TrimMean(percent, arrays...)
 }
