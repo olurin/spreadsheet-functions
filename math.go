@@ -44,7 +44,7 @@ func Quotient(numerator, denominator float64) (int, error) {
 func Sign(number float64) float64 { return mathlib.Sign(number) }
 
 // PI Returns the constant value of pi
-func PI() float64 { return 3.14159265358979 }
+func PI() float64 { return 3.14159265358979323846264338327950288419716939937510582097494459 }
 
 // SqrtPI returns the square root of a supplied number multiplied by pi
 func SqrtPI(number float64) (float64, error) { return mathlib.SqrtPI(number) }

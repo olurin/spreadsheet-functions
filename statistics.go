@@ -25,3 +25,8 @@ func Geomean(numbers ...float64) (float64, error) { return statistics.Geomean(nu
 
 // Harmean returns the harmonic mean of a set of supplied numbers
 func Harmean(numbers ...float64) (float64, error) { return statistics.Harmean(numbers...) }
+
+// TrimMean returns the mean of the interior of a supplied set of values
+func TrimMean(percent float64, arrays ...float64) (float64, error) {
+	return statistics.Harmean(numbers...)
+}
