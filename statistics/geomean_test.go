@@ -1,12 +1,16 @@
 package statistics
 
-import "testing"
+import (
+	"log"
+	"testing"
+)
 
 func TestGeomean(t *testing.T) {
 
-	x, err := Geomean(8, 7, 9, 6, 10)
+	x, err := Geomean(2.5, 3, 0.5, 1, 3)
 
-	if x != 8 && err != nil {
+	if x != 1.6226711115996044 || err != nil {
+		log.Println(x)
 		t.Errorf("Geomean Function Failed ... ")
 	}
 

@@ -6,7 +6,7 @@ func TestAverage(t *testing.T) {
 
 	x, err := Average(8, 7, 9, 6, 10)
 
-	if x != 8 && err != nil {
+	if x != 8 || err != nil {
 		t.Errorf("Average Function Failed ... ")
 	}
 
@@ -30,7 +30,7 @@ func TestAverage(t *testing.T) {
 
 	x, err = Average(nums...)
 
-	if x != 518.9587155963303 && err != nil {
+	if x != 518.9587155963303 || err != nil {
 		t.Errorf("Average Function Failed ... ")
 	}
 }
