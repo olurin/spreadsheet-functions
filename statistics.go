@@ -30,3 +30,8 @@ func Harmean(numbers ...float64) (float64, error) { return statistics.Harmean(nu
 func TrimMean(percent float64, arrays ...float64) (float64, error) {
 	return statistics.TrimMean(percent, arrays...)
 }
+
+// Percentile function returns the k'th percentile of a supplied range of values for a given value of k
+func Percentile(k float64, arrays ...float64) (float64, error) {
+	return statistics.Percentile(k, arrays...)
+}
