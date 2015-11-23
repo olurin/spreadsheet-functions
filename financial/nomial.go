@@ -5,7 +5,6 @@ import (
 	"math"
 
 	"github.com/TaperBox/formulas/math"
-
 	"gopkg.in/go-playground/validator.v8"
 )
 

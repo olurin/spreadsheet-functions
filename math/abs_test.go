@@ -1,6 +1,10 @@
 package mathlib
 
-import "testing"
+import (
+	"testing"
+
+	errs "github.com/TaperBox/formulas/errors"
+)
 
 func TestAbs(t *testing.T) {
 
@@ -9,7 +13,7 @@ func TestAbs(t *testing.T) {
 	z := -10.34
 
 	t1, err := Abs(x)
-	if err != nil {
+	if err != (errs.ErrorType{}) {
 		t.Errorf("Abs Function returned an error")
 	}
 
@@ -18,7 +22,7 @@ func TestAbs(t *testing.T) {
 	}
 
 	t1, err = Abs(y)
-	if err != nil {
+	if err != (errs.ErrorType{}) {
 		t.Errorf("Abs Function returned an error")
 	}
 
@@ -27,7 +31,7 @@ func TestAbs(t *testing.T) {
 	}
 
 	t1, err = Abs(z)
-	if err != nil {
+	if err != (errs.ErrorType{}) {
 		t.Errorf("Abs Function returned an error")
 	}
 

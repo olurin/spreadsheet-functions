@@ -1,8 +1,9 @@
 package mathlib
 
 import (
-	"errors"
 	"math"
+
+	errs "github.com/TaperBox/formulas/errors"
 )
 
 // The ABS function returns the absolute value
@@ -23,12 +24,17 @@ func abs(number float64) float64 {
 
 // Abs function returns the absolute value of a number.
 // The absolute value of a number is the number without its sign.
-func Abs(number float64) (float64, error) {
-
+func Abs(number float64) (float64, errs.ErrorType) {
+	// Error
+	err := errs.ErrorType{}
 	// Validate Number
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!, Occurs if the supplied number argument cannot be recognised as numeric value")
+		// If you get an error from the Excel Abs function, this is likely to be the #VALUE! error
+		err.Type = errs.ErrorCode(3)
+		err.Formula = "Abs"
+		err.Error = "Occurs if the supplied number argument cannot be recognised as numeric value"
+		return 0.0, err
 	}
 
-	return abs(number), nil
+	return abs(number), err
 }

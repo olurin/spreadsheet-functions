@@ -26,10 +26,27 @@ go get github.com/TaperBox/formulas
 ```
 
 or to update
+
+```
 go get -u github.com/TaperBox/formulas
+```
 
-## Error Type
+## Error
 
+ERROR.TYPE is to test for specific errors and display a relevant message (instead of error values)
+when certain error conditions exist.
+
+Error Code Key: 
+
+- 1 = #NULL!
+- 2 = #DIV/0!
+- 3 = #VALUE!
+- 4 = #REF!
+- 5 = #NAME?
+- 6 = #NUM!
+- 7 = #N/A
+- 8 = #GETTING_DATA
+ ... 
 
 ## Usage
 
@@ -45,9 +62,12 @@ p, err := fm.Percentile(60, nums...) // 60th Percentile
 
 if err != nil {
 	fmt.Println(err.Error())
-	// Common Errors 
-	// "#VALUE! - Occurred because the supplied value of k is non-numeric" or 
+	// Common Errors could be either
+
+	// "#VALUE! - Occurred because the supplied value of k is non-numeric" 
+	// or 
 	// "#NUM!   - Occurred because the supplied value of k is less than 0 or greater than 100 or the array is empty
+
 	return 
 }
 
@@ -55,6 +75,13 @@ fmt.Println("Percentile: ", p) // Percentile: 4
 
 ```
 
+Example
+
+```go
+import fm "github.com/TaperBox/formulas"
+
+
+```
 
 ## License
 Distributed under MIT [License](../formulas/blob/master/LICENSE), please see license file in code for more details.
