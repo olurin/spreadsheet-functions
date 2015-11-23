@@ -1,6 +1,9 @@
 package mathlib
 
-import "testing"
+import (
+	"log"
+	"testing"
+)
 
 func TestProduct(t *testing.T) {
 
@@ -13,6 +16,7 @@ func TestProduct(t *testing.T) {
 
 	p, err = Product(y...)
 	if p != 45000 || err != nil {
+		log.Println(p)
 		t.Errorf("Product Function Failed ... ")
 	}
 }

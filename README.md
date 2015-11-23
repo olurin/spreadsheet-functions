@@ -28,6 +28,8 @@ go get github.com/TaperBox/formulas
 or to update
 go get -u github.com/TaperBox/formulas
 
+## Error Type
+
 
 ## Usage
 
@@ -39,16 +41,17 @@ import fm "github.com/TaperBox/formulas"
 data := []float64{2, 1, 6, 4, 3, 5}
 
 // Percentile 
-percentile, err := fm.Percentile(60, nums...) // 60th Percentile
+p, err := fm.Percentile(60, nums...) // 60th Percentile
 
 if err != nil {
 	fmt.Println(err.Error())
 	// Common Errors 
 	// "#VALUE! - Occurred because the supplied value of k is non-numeric" or 
 	// "#NUM!   - Occurred because the supplied value of k is less than 0 or greater than 100 or the array is empty
+	return 
 }
 
-fmt.Println(percentile) // 4
+fmt.Println("Percentile: ", p) // Percentile: 4
 
 ```
 

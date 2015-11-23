@@ -350,7 +350,7 @@ func TestPower(t *testing.T) {
 	}
 
 	p, err = Power(2, 4)
-	if p != 32 && err != nil {
+	if p != 16 && err != nil {
 		t.Errorf("Product Function Failed ... ")
 	}
 

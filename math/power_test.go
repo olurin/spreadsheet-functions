@@ -1,6 +1,9 @@
 package mathlib
 
-import "testing"
+import (
+	"log"
+	"testing"
+)
 
 func TestPower(t *testing.T) {
 
@@ -10,7 +13,8 @@ func TestPower(t *testing.T) {
 	}
 
 	p, err = Power(2, 4)
-	if p != 32 || err != nil {
+	if p != 16 || err != nil {
+		log.Println(p)
 		t.Errorf("Product Function Failed ... ")
 	}
 
