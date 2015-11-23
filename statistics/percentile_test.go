@@ -22,7 +22,6 @@ func TestPercentile(t *testing.T) {
 	}
 
 	x, err = Percentile(50, nums...)
-
 	if x != 4 || err != nil {
 		log.Println(x)
 		t.Errorf("Percentile function failed ... ")
