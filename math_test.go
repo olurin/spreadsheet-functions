@@ -1,44 +1,40 @@
 package formulas
 
-import "testing"
+import (
+	"log"
+	"testing"
+)
 
-func TestAbs(t *testing.T) {
-
-	x := -19.0
-	y := 0.0
+func TestABS(t *testing.T) {
+	x := 9.0
+	y := -10.0
 	z := -10.34
 
-	t1, err := Abs(x)
+	t1, err := ABS(x)
 	if err != nil {
 		t.Errorf("Abs Function returned an error")
 	}
 
-	if t1 != 19.000 {
+	if t1 != 9 {
 		t.Errorf("Abs Function failed")
 	}
 
-	t1, err = Abs(y)
+	t1, err = ABS(y)
 	if err != nil {
 		t.Errorf("Abs Function returned an error")
 	}
 
-	if t1 != 0.0 {
+	if t1 != 10.0 {
 		t.Errorf("Abs Function failed")
 	}
 
-	t1, err = Abs(z)
+	t1, err = ABS(z)
 	if err != nil {
 		t.Errorf("Abs Function returned an error")
 	}
 
 	if t1 != 10.34 {
 		t.Errorf("Abs Function failed")
-	}
-}
-
-func BenchmarkAbs(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		Abs(-110.0)
 	}
 }
 
@@ -79,16 +75,10 @@ func TestEXP(t *testing.T) {
 	}
 }
 
-func BenchmarkExp(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		Exp(1.0)
-	}
-}
-
 func TestGCD(t *testing.T) {
 
 	a := []int{203, 91, 77}
-	b := []int{77, 91, 203}
+	// b := []int{77, 91, 203}
 	c := []int{5, 2}
 	x := []int{24, 36}
 	y := []int{5, 0}
@@ -104,7 +94,7 @@ func TestGCD(t *testing.T) {
 		t.Errorf("GCD Function Failed ")
 	}
 
-	result, err = GCD(b...)
+	result, err = GCD(77, 91, 203)
 
 	if err != nil {
 		t.Errorf("GCD Function returned an error")
@@ -155,13 +145,6 @@ func TestGCD(t *testing.T) {
 	}
 
 }
-
-func BenchmarkGCD(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		GCD(203, 91, 77)
-	}
-}
-
 func TestLCM(t *testing.T) {
 
 	a := []int{1, 5}
@@ -208,13 +191,6 @@ func TestLCM(t *testing.T) {
 	if result != 14 {
 		t.Errorf("LCM Function Failed ")
 	}
-
-}
-
-func BenchmarkLCM(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		LCM(203, 91, 77)
-	}
 }
 
 func TestLN(t *testing.T) {
@@ -240,13 +216,6 @@ func TestLN(t *testing.T) {
 
 	if result != 4.605170185988092 {
 		t.Errorf("LN Function Failed ... ")
-	}
-
-}
-
-func BenchmarkLN(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		LN(23.98)
 	}
 }
 
@@ -283,12 +252,6 @@ func TestLog10(t *testing.T) {
 
 	if result != 1 {
 		t.Errorf("Log10 Function Failed ... ")
-	}
-}
-
-func BenchmarkLog10(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		Log10(23.98)
 	}
 }
 
@@ -333,36 +296,61 @@ func TestMod(t *testing.T) {
 	if result != -1 {
 		t.Errorf("Mod Function Failed Mod(-3, -2) ... ")
 	}
-
-}
-
-func BenchmarkMod(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		Mod(3, -2)
-	}
 }
 
 func TestPower(t *testing.T) {
 
 	p, err := Power(10, 4)
-	if p != 10000 && err != nil {
+	if p != 10000 || err != nil {
 		t.Errorf("Product Function Failed ... ")
 	}
 
 	p, err = Power(2, 4)
-	if p != 16 && err != nil {
+	if p != 16 || err != nil {
+		log.Println(p)
 		t.Errorf("Product Function Failed ... ")
 	}
 
 	p, err = Power(5, 2)
-	if p != 25 && err != nil {
+	if p != 25 || err != nil {
 		t.Errorf("Product Function Failed ... ")
 	}
 }
 
-func BenchmarkPower(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		Power(100, 10)
+func TestProduct(t *testing.T) {
+
+	y := []float64{100, 10, 45}
+
+	p, err := Product(45, 2, 23)
+	if p != 2070 || err != nil {
+		t.Errorf("Product Function Failed ... ")
+	}
+
+	p, err = Product(y...)
+	if p != 45000 || err != nil {
+		log.Println(p)
+		t.Errorf("Product Function Failed ... ")
+	}
+}
+
+func TestQuotient(t *testing.T) {
+
+	result, err := Quotient(5, 2)
+
+	if result != 2 || err != nil {
+		t.Errorf("Quotient Function Failed ... ")
+	}
+
+	result, err = Quotient(4.5, 3.1)
+
+	if result != 1 || err != nil {
+		t.Errorf("Quotient Function Failed ... ")
+	}
+
+	result, err = Quotient(-10, 3)
+
+	if result != -3 || err != nil {
+		t.Errorf("Quotient Function Failed ... ")
 	}
 }
 
@@ -383,8 +371,18 @@ func TestRound(t *testing.T) {
 	}
 }
 
-func BenchmarkRound(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		Round(100.908398734, 3)
+func TestSqrt(t *testing.T) {
+	x, err := Sqrt(81)
+
+	if x != 9 && err != nil {
+		t.Errorf("Sqrt Function Failed ... ")
+	}
+
+	x1, err1 := Sqrt(-81)
+
+	log.Println(err1)
+
+	if x1 != 0.0 && err1 == nil {
+		t.Errorf("Sqrt Function Failed ... ")
 	}
 }

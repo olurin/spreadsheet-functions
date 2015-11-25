@@ -2,14 +2,14 @@
 
 [![Go Report Card](http://goreportcard.com/badge/TaperBox/formulas)](http://goreportcard.com/report/TaperBox/formulas) [![Build Status](https://travis-ci.org/TaperBox/formulas.svg?branch=master)](https://travis-ci.org/TaperBox/formulas)
 
-Go implementation of most Spreadsheet | Excel Formulas, :bulb: by [excelfunctions.net](http://www.excelfunctions.net), [formula.js](https://github.com/sutoiku/formula.js)
+Go implementation of most Spreadsheet | Excel Formulas, (:bulb:) inspired by [excelfunctions.net](http://www.excelfunctions.net), [formula.js](https://github.com/sutoiku/formula.js)
 
 This library is currently under development.
 
 ## Overview of functions
-- [x] [Math and Trigonometry functions](../master/math/README.md)
-- [x] [Statistical functions](../master/statistics/README.md)
-- [x] [Financial functions](../master/financial/README.md)
+- [x] Math and Trigonometry functions
+- [ ] Statistical functions
+- [ ] Financial functions
 - [ ] Date and time functions
 - [ ] Logical Functions
 - [ ] Engineering Functions
@@ -30,6 +30,7 @@ or to update
 ```
 go get -u github.com/TaperBox/formulas
 ```
+
 
 ## Error
 
