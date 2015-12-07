@@ -7,13 +7,8 @@ Go implementation of most Spreadsheet | Excel Formulas, (:bulb:) inspired by [ex
 
 This library is currently under development.
 
-## Current Functions 
+#### Current Functions 
 - [x] Math and Trigonometry functions
--
-	- [x] Basic Numeric Information Abs, Sign, GCD, and LCM
-	- [x] Basic Mathematical Operations Sum, Product, Power, Sqrt, Quotient, Mod e.t.c.
-	
-
 - [ ] Statistical functions
 - [ ] Financial functions
 - [ ] Date and time functions
@@ -23,7 +18,7 @@ This library is currently under development.
 - [ ] Text Functions
 - [ ] Web Functions
 
-## Installation
+#### Installation
 
 use go get
 
@@ -38,7 +33,7 @@ go get -u github.com/TaperBox/formulas
 ```
 
 
-## Error
+#### Error
 
 ERROR.TYPE is to test for specific errors and display a relevant message (instead of error values)
 when certain error conditions exist.
@@ -55,7 +50,7 @@ Error Code Key:
 - 8 = #GETTING_DATA
  ... 
 
-## Usage
+#### Usage
 
 Value and Common Error 
 
@@ -71,9 +66,9 @@ if err != nil {
 	fmt.Println(err.Error())
 	// Common Errors could be either
 
-	// "#VALUE! - Occurred because the supplied value of k is non-numeric" 
+	// "#VALUE! 
 	// or 
-	// "#NUM!   - Occurred because the supplied value of k is less than 0 or greater than 100 or the array is empty
+	// "#NUM!   
 
 	return 
 }
@@ -90,5 +85,5 @@ import fm "github.com/TaperBox/formulas"
 
 ```
 
-## License
+#### License
 Distributed under MIT [License](../formulas/blob/master/LICENSE), please see license file in code for more details.
