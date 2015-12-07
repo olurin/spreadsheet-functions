@@ -268,7 +268,7 @@ func Radians(degrees float64) (float64, error) {
 func Cos(number float64) (float64, error) {
 
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	// Math returns the cosine of the radian argument x.
@@ -280,11 +280,11 @@ func Acos(number float64) (float64, error) {
 
 	// Validate Number - Common Errors
 	if number < -1 || number > 1 {
-		return 0.0, errors.New("#NUM!	-	Occurred because the supplied number argument is outside of the range -1 to +1")
+		return 0.0, errors.New(errorCode(6))
 	}
 
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	return math.Acos(number), nil
@@ -294,7 +294,7 @@ func Acos(number float64) (float64, error) {
 func CosH(number float64) (float64, error) {
 
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	return math.Cosh(number), nil
@@ -304,11 +304,11 @@ func CosH(number float64) (float64, error) {
 func AcosH(number float64) (float64, error) {
 
 	if number < 1 {
-		return 0.0, errors.New("#NUM! -  Occurred because the supplied number argument is less than 1")
+		return 0.0, errors.New(errorCode(6))
 	}
 
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	return math.Acosh(number), nil
@@ -318,11 +318,11 @@ func AcosH(number float64) (float64, error) {
 func Sec(number float64) (float64, error) {
 
 	if number < -134217728 || number > 134217728 {
-		return 0.0, errors.New("#NUM! -  Occurred because the supplied number argument is less than -2^27 or is greater than 2^27")
+		return 0.0, errors.New(errorCode(6))
 	}
 
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	return (1 / math.Cos(number)), nil
@@ -332,11 +332,11 @@ func Sec(number float64) (float64, error) {
 func SecH(number float64) (float64, error) {
 
 	if number < -134217728 || number > 134217728 {
-		return 0.0, errors.New("#NUM! -  Occurred because the supplied number argument is less than -2^27 or is greater than 2^27")
+		return 0.0, errors.New(errorCode(6))
 	}
 
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	return (1 / math.Cosh(number)), nil
@@ -346,7 +346,7 @@ func SecH(number float64) (float64, error) {
 func Sin(number float64) (float64, error) {
 
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	// Math returns the sine of the radian argument x.
@@ -358,11 +358,11 @@ func Asin(number float64) (float64, error) {
 
 	// Validate Number - Common Errors
 	if number < -1 || number > 1 {
-		return 0.0, errors.New("#NUM!	-	Occurred because the supplied number argument is outside of the range -1 to +1")
+		return 0.0, errors.New(errorCode(6))
 	}
 
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	return math.Asin(number), nil
@@ -372,7 +372,7 @@ func Asin(number float64) (float64, error) {
 func SinH(number float64) (float64, error) {
 
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	// Sinh returns the hyperbolic sine of x.
@@ -383,7 +383,7 @@ func SinH(number float64) (float64, error) {
 func AsinH(number float64) (float64, error) {
 
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	return math.Asinh(number), nil
@@ -393,15 +393,15 @@ func AsinH(number float64) (float64, error) {
 func Csc(number float64) (float64, error) {
 
 	if number == 0 {
-		return 0.0, errors.New("#DIV/0!	-	Occurred because the supplied number argument is equal to zero")
+		return 0.0, errors.New(errorCode(2))
 	}
 
 	if number < -134217728 || number > 134217728 {
-		return 0.0, errors.New("#NUM! -  Occurred because the supplied number argument is less than -2^27 or is greater than 2^27")
+		return 0.0, errors.New(errorCode(6))
 	}
 
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	return 1 / math.Sin(number), nil
@@ -411,15 +411,15 @@ func Csc(number float64) (float64, error) {
 func CscH(number float64) (float64, error) {
 
 	if number == 0 {
-		return 0.0, errors.New("#DIV/0!	-	Occurred because the supplied number argument is equal to zero")
+		return 0.0, errors.New(errorCode(2))
 	}
 
 	if number < -134217728 || number > 134217728 {
-		return 0.0, errors.New("#NUM! -  Occurred because the supplied number argument is less than -2^27 or is greater than 2^27")
+		return 0.0, errors.New(errorCode(6))
 	}
 
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	return 1 / math.Sinh(number), nil
@@ -429,7 +429,7 @@ func CscH(number float64) (float64, error) {
 func Tan(number float64) (float64, error) {
 
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	return math.Tan(number), nil
@@ -438,7 +438,7 @@ func Tan(number float64) (float64, error) {
 // Atan returns the Arctangent of a given number
 func Atan(number float64) (float64, error) {
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 	return math.Atan(number), nil
 }
@@ -447,11 +447,11 @@ func Atan(number float64) (float64, error) {
 func Atan2(x, y float64) (float64, error) {
 
 	if math.IsNaN(x) || math.IsNaN(y) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	if x == 0 && y == 0 {
-		return 0.0, errors.New("#DIV/0!	-	Occurred because the supplied x_num and y_num arguments are both equal to 0")
+		return 0.0, errors.New(errorCode(2))
 	}
 
 	return math.Atan2(x, y), nil
@@ -477,11 +477,11 @@ func AtanH(number float64) (float64, error) {
 
 	// Validate Number - Common Errors
 	if number <= -1 || number >= 1 {
-		return 0.0, errors.New("#NUM!	-	Occurred because the supplied number argument is  ≤ -1 or ≥ 1")
+		return 0.0, errors.New(errorCode(6))
 	}
 
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	return math.Atanh(number), nil
@@ -491,15 +491,15 @@ func AtanH(number float64) (float64, error) {
 func Cot(number float64) (float64, error) {
 
 	if number == 0 {
-		return 0.0, errors.New("#DIV/0!	-	Occurred because the supplied number argument is equal to zero")
+		return 0.0, errors.New(errorCode(2))
 	}
 
 	if number < -134217728 || number > 134217728 {
-		return 0.0, errors.New("#NUM! -  Occurred because the supplied number argument is less than -2^27 or is greater than 2^27")
+		return 0.0, errors.New(errorCode(6))
 	}
 
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	return 1 / math.Tan(number), nil
@@ -509,15 +509,15 @@ func Cot(number float64) (float64, error) {
 func CotH(number float64) (float64, error) {
 
 	if number == 0 {
-		return 0.0, errors.New("#DIV/0!	-	Occurred because the supplied number argument is equal to zero")
+		return 0.0, errors.New(errorCode(2))
 	}
 
 	if number < -134217728 || number > 134217728 {
-		return 0.0, errors.New("#NUM! -  Occurred because the supplied number argument is less than -2^27 or is greater than 2^27")
+		return 0.0, errors.New(errorCode(6))
 	}
 
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	tanh, err := TanH(number)
@@ -533,7 +533,7 @@ func CotH(number float64) (float64, error) {
 func Acot(number float64) (float64, error) {
 
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	number = 1 / number
@@ -551,11 +551,11 @@ func AcotH(number float64) (float64, error) {
 
 	// Validate Number - Common Errors
 	if number >= -1 && number <= 1 {
-		return 0.0, errors.New("#NUM!	-	Occurred because supplied number argument is between -1 and +1 (inclusive)")
+		return 0.0, errors.New(errorCode(6))
 	}
 
 	if math.IsNaN(number) {
-		return 0.0, errors.New("#VALUE!	-	Occurred because the supplied number argument is non-numeric")
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	v, err := LN((number + 1) / (number - 1))
