@@ -428,3 +428,24 @@ func TestSqrtPI(t *testing.T) {
 		t.Errorf("SqrtPI Function Failed ... ")
 	}
 }
+
+func TestDegree(t *testing.T) {
+	x, err := Degrees(1)
+	if x != 57.29577951308238 || err != nil {
+		t.Errorf("Degrees Function Failed ... ")
+	}
+
+	x, err = Degrees(-2.5)
+	if x != -143.23944878270595 || err != nil {
+		t.Errorf("Degrees Function Failed ... ")
+	}
+	x, err = Degrees(PI())
+	if x != 180 || err != nil {
+		t.Errorf("Degrees Function Failed ... ")
+	}
+
+	x, err = Degrees(2 * PI())
+	if x != 360 || err != nil {
+		t.Errorf("Degrees Function Failed ... ")
+	}
+}
