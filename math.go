@@ -1,40 +1,27 @@
 package formulas
 
 import (
-	"log"
+	"errors"
 	"math"
 )
 
 // ABS function returns the absolute value of a number
 // The absolute value of a number is the number without its sign
-func ABS(number float64) (float64, FormulaErrors) {
+func ABS(number float64) (float64, error) {
 	// Validate Number
 	if math.IsNaN(number) {
-		var err FormulaErrors
-		err["Error"] = &FunctionError{
-			Error:   "The supplied number argument cannot be recognised as numeric value",
-			Type:    ErrorExport(3),
-			Formula: "ABS",
-		}
-		return 0.0, err
+		return 0.0, errors.New(errorCode(3))
 	}
-
 	return abs(number), nil
 }
 
 // Exp function returns e raised to a given power
-func Exp(number float64) (float64, FormulaErrors) {
+func Exp(number float64) (float64, error) {
 
 	// Validate Number
 	if math.IsNaN(number) {
-		var err FormulaErrors
-		err["Error"] = &FunctionError{
-			Error:   "The supplied number argument cannot be recognised as numeric value",
-			Type:    ErrorExport(3),
-			Formula: "Exp",
-		}
+		return 0.0, errors.New(errorCode(3))
 	}
-
 	return math.Exp(number), nil
 }
 
@@ -42,18 +29,11 @@ func Exp(number float64) (float64, FormulaErrors) {
 // The format of the function is :   GCD( number1, number2, ...)
 // Where the number arguments are up to 255 numerical values for which you want to calculate the greatest common divisor.
 // If any of the supplied numbers are not integers, these values are truncated to integers.
-func GCD(numbers ...int) (int, FormulaErrors) {
+func GCD(numbers ...int) (int, error) {
 
 	// Validate Numbers
 	if len(numbers) <= 1 {
-		var err FormulaErrors
-		err["Error"] = &FunctionError{
-			Error:   "Number1, number2, ...    Number1 is required, subsequent numbers are optional. 1 to 255 values. If any value is not an integer, it is truncated.",
-			Type:    ErrorExport(6),
-			Formula: "GCD",
-		}
-
-		return 0, err
+		return 0, errors.New(errorCode(6))
 	}
 
 	var gcdValue int
@@ -77,17 +57,11 @@ func GCD(numbers ...int) (int, FormulaErrors) {
 // LCM function returns the least common multiple of two or more supplied integers
 // The format of the function is LCM( number1, number2, ...)
 // Where the number arguments are up to 255 numerical values for which you want to calculate the least common multiple.
-func LCM(numbers ...int) (int, FormulaErrors) {
+func LCM(numbers ...int) (int, error) {
 
 	// Validate Numbers
 	if len(numbers) <= 1 {
-		var err FormulaErrors
-		err["Error"] = &FunctionError{
-			Error:   "Number1, number2, ...    Number1 is required, subsequent numbers are optional. 1 to 255 values. If any value is not an integer, it is truncated.",
-			Type:    ErrorExport(6),
-			Formula: "LCM",
-		}
-		return 0, err
+		return 0, errors.New(errorCode(6))
 	}
 
 	var lcmvalue int
@@ -112,79 +86,43 @@ func LCM(numbers ...int) (int, FormulaErrors) {
 
 // LN returns the natural logarithm of a number. Natural
 // logarithms are based on the constant e (2.71828182845904)
-func LN(number float64) (float64, FormulaErrors) {
+func LN(number float64) (float64, error) {
 	// Validate Number
 	if number <= 0 {
-		var err FormulaErrors
-		err["Error"] = &FunctionError{
-			Error:   "supplied number argument is negative or zero",
-			Type:    ErrorExport(6),
-			Formula: "LN",
-		}
-		return 0.0, err
+		return 0.0, errors.New(errorCode(6))
 	}
 
 	if math.IsNaN(number) {
-		var err FormulaErrors
-		err["Error"] = &FunctionError{
-			Error:   "supplied number argument is not a numeric value",
-			Type:    ErrorExport(3),
-			Formula: "LN",
-		}
-		return 0.0, err
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	return math.Log(number), nil
 }
 
 // Log10 Returns the base-10 logarithm of a number.
-func Log10(number float64) (float64, FormulaErrors) {
+func Log10(number float64) (float64, error) {
 
 	// Validate Number
 	if number <= 0 {
-		var err FormulaErrors
-		err["Error"] = &FunctionError{
-			Error:   "supplied number argument is negative or zero",
-			Type:    ErrorExport(6),
-			Formula: "Log10",
-		}
-		return 0.0, err
+		return 0.0, errors.New(errorCode(6))
 	}
 
 	if math.IsNaN(number) {
-		var err FormulaErrors
-		err["Error"] = &FunctionError{
-			Error:   "supplied number argument is not a numeric value",
-			Type:    ErrorExport(3),
-			Formula: "Log10",
-		}
-		return 0.0, err
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	return math.Log10(number), nil
 }
 
 // Mod returns the remainder after number is divided by divisor. The result has the same sign as divisor.
-func Mod(number, divisor float64) (float64, FormulaErrors) {
+func Mod(number, divisor float64) (float64, error) {
 
 	if math.IsNaN(divisor) || math.IsNaN(number) {
-		var err FormulaErrors
-		err["Error"] = &FunctionError{
-			Error:   "supplied arguments are non-numeric",
-			Type:    ErrorExport(6),
-			Formula: "Mod",
-		}
-		return 0.0, err
+		return 0.0, errors.New(errorCode(6))
 	}
 
 	if divisor == 0 {
-		var err FormulaErrors
-		err["Error"] = &FunctionError{
-			Error:   "supplied denominator argument is zero",
-			Type:    ErrorExport(2), // #DIV/0!
-			Formula: "Mod",
-		}
-		return 0.0, err
+		return 0.0, errors.New(errorCode(2))
 	}
 
 	sign := Sign(divisor)
@@ -209,34 +147,22 @@ func Sign(number float64) float64 {
 }
 
 // Power function returns the result of a given number raised to a supplied power
-func Power(number, power float64) (float64, FormulaErrors) {
+func Power(number, power float64) (float64, error) {
 	if math.IsNaN(number) || math.IsNaN(power) {
-		var err FormulaErrors
-		err["Error"] = &FunctionError{
-			Error:   "supplied arguments are non-numeric",
-			Type:    ErrorExport(3),
-			Formula: "Power",
-		}
-		return 0.0, err
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	return math.Pow(number, power), nil
 }
 
 // Product returns the product of a supplied list of numbers
-func Product(numbers ...float64) (float64, FormulaErrors) {
+func Product(numbers ...float64) (float64, error) {
 
 	product := 1.0
 
 	for _, number := range numbers {
 		if math.IsNaN(number) {
-			var err FormulaErrors
-			err["Error"] = &FunctionError{
-				Error:   "Arguments are supplied directly to the Product function can not be interpreted as numeric values",
-				Type:    ErrorExport(3),
-				Formula: "Product",
-			}
-			return 0.0, err
+			return 0.0, errors.New(errorCode(3))
 		}
 		product = product * number
 	}
@@ -244,28 +170,13 @@ func Product(numbers ...float64) (float64, FormulaErrors) {
 }
 
 // Quotient returns the integer portion of a division between two supplied numbers
-func Quotient(numerator, denominator float64) (int, FormulaErrors) {
+func Quotient(numerator, denominator float64) (int, error) {
 	if denominator == 0 {
-
-		var err FormulaErrors
-		err["Error"] = &FunctionError{
-			Error:   "The supplied denominator argument is zero",
-			Type:    ErrorExport(2),
-			Formula: "Quotient",
-		}
-
-		return 0.0, err
+		return 0.0, errors.New(errorCode(2))
 	}
 
 	if math.IsNaN(numerator) || math.IsNaN(denominator) {
-
-		var err FormulaErrors
-		err["Error"] = &FunctionError{
-			Error:   "The supplied arguments are non-numeric",
-			Type:    ErrorExport(3),
-			Formula: "Quotient",
-		}
-		return 0.0, err
+		return 0.0, errors.New(errorCode(3))
 	}
 
 	return int(numerator / denominator), nil
@@ -288,30 +199,49 @@ func Round(number float64, numDigits int) float64 {
 }
 
 // Sqrt returns the positive square root of a given number
-func Sqrt(number float64) (float64, FormulaErrors) {
+func Sqrt(number float64) (float64, error) {
 	if number < 0 {
-		err := FormulaErrors
-		err["Error"] = &FunctionError{
-			Error:   "The supplied number argument is negative",
-			Type:    ErrorExport(6),
-			Formula: "Sqrt",
-		}
-
-		log.Println(err)
-		return 0.0, err
+		return 0.0, errors.New(errorCode(6))
 	}
 
 	if math.IsNaN(number) {
-		var err FormulaErrors
-		err["Error"] = &FunctionError{
-			Error:   "The supplied number argument is non-numeric",
-			Type:    ErrorExport(3),
-			Formula: "Sqrt",
+		return 0.0, errors.New(errorCode(3))
+	}
+	return math.Sqrt(number), nil
+}
+
+// Sum returns the sum of a supplied list of numbers
+func Sum(numbers ...float64) (float64, error) {
+	var sum float64
+	for _, number := range numbers {
+		if math.IsNaN(number) {
+			return 0.0, errors.New(errorCode(3))
 		}
-		return 0.0, err
+		sum = sum + number
 	}
 
-	return math.Sqrt(number), nil
+	return sum, nil
+}
+
+// PI Returns the constant value of pi
+func PI() float64 {
+	return 3.14159265358979
+}
+
+// SqrtPI Returns the square root of a supplied number multiplied by pi
+// Returns the square root of (number * pi).
+func SqrtPI(number float64) (float64, error) {
+
+	// Validate Number - Common Errors
+	if number < 0 {
+		return 0.0, errors.New(errorCode(6))
+	}
+
+	if math.IsNaN(number) {
+		return 0.0, errors.New(errorCode(3))
+	}
+
+	return math.Sqrt(number * PI()), nil
 }
 
 func abs(number float64) float64 {

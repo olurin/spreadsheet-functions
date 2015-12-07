@@ -380,9 +380,51 @@ func TestSqrt(t *testing.T) {
 
 	x1, err1 := Sqrt(-81)
 
-	log.Println(err1)
-
 	if x1 != 0.0 && err1 == nil {
 		t.Errorf("Sqrt Function Failed ... ")
+	}
+}
+
+func TestSum(t *testing.T) {
+
+	x, err := Sum(12, 34, 65, 34, 23)
+
+	if x != 168 && err != nil {
+		t.Errorf("Sum Function Failed ... ")
+	}
+
+	x, err = Sum(12, 23)
+
+	if x != 35 && err != nil {
+		t.Errorf("Sum Function Failed ... ")
+	}
+	x, err = Sum(-12, 23)
+	if x != 11 && err != nil {
+		t.Errorf("Sum Function Failed ... ")
+	}
+}
+
+func TestSqrtPI(t *testing.T) {
+	x, err := SqrtPI(5)
+	if x != 3.9633272976060088 || err != nil {
+		t.Errorf("SqrtPI Function Failed ... ")
+	}
+
+	x, err = SqrtPI(0.2)
+
+	if x != 0.7926654595212018 || err != nil {
+		t.Errorf("SqrtPI Function Failed ... ")
+	}
+
+	x, err = SqrtPI(100)
+
+	if x != 17.72453850905515 || err != nil {
+		t.Errorf("SqrtPI Function Failed ... ")
+	}
+
+	x, err = SqrtPI(0)
+
+	if x != 0 || err != nil {
+		t.Errorf("SqrtPI Function Failed ... ")
 	}
 }

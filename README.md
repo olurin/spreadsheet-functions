@@ -1,13 +1,19 @@
 # Formulas
 
 [![Go Report Card](http://goreportcard.com/badge/TaperBox/formulas)](http://goreportcard.com/report/TaperBox/formulas) [![Build Status](https://travis-ci.org/TaperBox/formulas.svg?branch=master)](https://travis-ci.org/TaperBox/formulas)
+[![Build Status](https://semaphoreci.com/api/v1/projects/2d77940c-e0f6-4f5f-a4c6-f92548f19cff/624394/badge.svg)](https://semaphoreci.com/muyiwaolurin/formulas)
 
 Go implementation of most Spreadsheet | Excel Formulas, (:bulb:) inspired by [excelfunctions.net](http://www.excelfunctions.net), [formula.js](https://github.com/sutoiku/formula.js)
 
 This library is currently under development.
 
-## Overview of functions
+## Current Functions 
 - [x] Math and Trigonometry functions
+-
+	- [x] Basic Numeric Information Abs, Sign, GCD, and LCM
+	- [x] Basic Mathematical Operations Sum, Product, Power, Sqrt, Quotient, Mod e.t.c.
+	
+
 - [ ] Statistical functions
 - [ ] Financial functions
 - [ ] Date and time functions
@@ -19,7 +25,7 @@ This library is currently under development.
 
 ## Installation
 
-use go get. 
+use go get
 
 ```
 go get github.com/TaperBox/formulas

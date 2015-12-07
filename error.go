@@ -1,17 +1,6 @@
 package formulas
 
-//FunctionError struct contains the error type, field error
-type FunctionError struct {
-	Error   string
-	Type    string
-	Formula string
-}
-
-//FormulaErrors is the type of map[string]*FunctionError
-type FormulaErrors map[string]*FunctionError
-
-// ErrorExport function
-func ErrorExport(code int) string {
+func errorCode(code int) string {
 	switch code {
 	case 1:
 		return "#NULL!"
